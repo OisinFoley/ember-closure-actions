@@ -1,5 +1,42 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
 
-{{outlet}}
+
+
+  <form>
+    <button {{action 'showPopup'}}>click the button</button>
+  </form>
+  <br>
+  <br>
+  {{#if showMessage}}
+    this is a message
+
+  {{/if}}
+
+  {{counter}}
+
+  <br>
+  <br>
+
+  {{my-component myPopup=(action 'showPopup')}}
+
+
+{{!--
+<button onclick={{showPopup}}>click the button</button>
+--}}
+
+  <br>
+  <br>
+  <br>
+  <h2>A note, as this is easy to get confused with</h2>
+  <br>
+  <br>
+  <h4>
+     - For a closure action: we call the component's action, then call the nested action associated with the template
+    <br>
+    - The component's action actually just gives us a paramter for the nested action that belongs to the template
+    <br>
+    - So, the action still comes entirely from the template, but the component is used to gather a value whether 1, or some string
+  </h4>
+
+
+
+
